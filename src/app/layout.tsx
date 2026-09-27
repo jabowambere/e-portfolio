@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import ShaderBackground from "@/components/ShaderBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#05050c" },
+    { media: "(prefers-color-scheme: dark)", color: "#05050c" },
   ],
 };
 
@@ -41,7 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ShaderBackground />
+        {children}
+      </body>
     </html>
   );
 }
